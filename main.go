@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"github.com/robertantonyjaikumar/hangover-common/config"
-	"github.com/robertantonyjaikumar/hangover-common/database"
 	"github.com/robertantonyjaikumar/hangover-common/logger"
 	"go.uber.org/zap"
+	"hangover/models"
 	"hangover/routes"
 	"net/http"
 	"os"
@@ -15,15 +15,8 @@ import (
 )
 
 func main() {
-	db := database.Db
-	migrations := database.Migrations{
-		DB:     db,
-		Models: []interface{}{
-			// 		&models.MailChimpOBMember{},
-		},
-	}
-
-	database.RunMigrations(migrations)
+	models.MigrateDB()
+	models.SeedDB()
 	// Create a new HTTP server with custom configuration
 	server := &http.Server{
 		Addr:    ":" + config.CFG.V.GetString("server.port"),

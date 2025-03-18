@@ -6,6 +6,6 @@ import (
 )
 
 func AuthRoutes(router *gin.RouterGroup) {
-	health := new(controllers.HealthRepo)
-	router.GET("/health", health.Status)
+	auth := new(controllers.AuthRepo)
+	router.POST("/login", auth.Login)
 }

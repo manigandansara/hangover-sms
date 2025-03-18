@@ -1,0 +1,10 @@
+[
+  {
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "password_hash": "admin",
+    "user_group": 1,
+    "is_active": true,
+    "role": 1
+  }
+]

@@ -5,8 +5,10 @@ go 1.24.1
 require (
 	github.com/gin-contrib/zap v1.1.4
 	github.com/gin-gonic/gin v1.10.0
-	github.com/robertantonyjaikumar/hangover-common v0.0.0-20250317122651-07f8c42b11dc
+	github.com/golang-jwt/jwt/v4 v4.5.1
+	github.com/robertantonyjaikumar/hangover-common v0.0.0-20250318092335-cf0fd8c178eb
 	go.uber.org/zap v1.27.0
+	gorm.io/gorm v1.25.12
 )
 
 require (
@@ -119,7 +121,6 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gorm.io/driver/postgres v1.5.11 // indirect
-	gorm.io/gorm v1.25.12 // indirect
 	gorm.io/plugin/dbresolver v1.5.3 // indirect
 	k8s.io/apimachinery v0.32.2 // indirect
 	modernc.org/sqlite v1.34.1 // indirect
