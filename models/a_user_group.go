@@ -25,7 +25,7 @@ func SeedUserGroup(model interface{}) error {
 	}
 	for _, userGroup := range *userGroups {
 		if err := database.Db.FirstOrCreate(&userGroup, "name = ?", userGroup.Name).Error; err != nil {
-			logger.Error("Error creating user seed: "+userGroup.Name, zap.Error(err))
+			logger.Error("Error creating user group seed: "+userGroup.Name, zap.Error(err))
 			return err
 		}
 	}
