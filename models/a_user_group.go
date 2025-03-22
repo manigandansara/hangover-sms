@@ -14,6 +14,7 @@ type UserGroup struct {
 	IsActive    *bool `json:"is_active"`
 }
 
+// TableName specifies the database table name
 func (UserGroup) TableName() string {
 	return "user_groups"
 }
