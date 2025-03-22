@@ -18,6 +18,8 @@ func (UserGroup) TableName() string {
 	return "user_groups"
 }
 
+// SeedUserGroup seeds the user groups from the provided model into the database using the FirstOrCreate method.
+// It expects the model to be a pointer to a slice of UserGroup and returns an error if the type assertion fails or on DB errors.
 func SeedUserGroup(model interface{}) error {
 	userGroups, ok := model.(*[]UserGroup)
 	if !ok {
