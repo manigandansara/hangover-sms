@@ -1,14 +1,11 @@
 package utils
 
 import (
-	"github.com/gin-gonic/gin"
 	"hangover/structs"
+
+	"github.com/gin-gonic/gin"
 )
 
-func SuccessResponse(c *gin.Context, message string, code int, data interface{}) {
-	c.JSON(200, structs.Response{code, message, data})
-}
-
-func ErrorResponse(c *gin.Context, message string, code int, data interface{}) {
-	c.JSON(200, structs.Response{code, message, data})
+func JsonResponse(c *gin.Context, message string, code int, data interface{}) {
+	c.JSON(code, structs.Response{Code: code, Msg: message, Data: data})
 }
